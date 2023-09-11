@@ -1,1 +1,1 @@
-console.log("this is working!");
+(()=>{"use strict";!function(){const e=document.createElement("p"),t=document.createElement("h1"),n=document.createElement("img"),r=document.querySelector("#content");t.textContent="Tropical Paradise",e.textContent="welcome to tropical paradise where our drinks are as fresh as the island breeze!",[t,e,n].forEach((e=>r.appendChild(e)))}()})();

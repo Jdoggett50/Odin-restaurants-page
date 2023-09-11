@@ -1,1 +1,3 @@
-console.log('this is working!');
+import loadDom from "./page-load";
+
+loadDom();

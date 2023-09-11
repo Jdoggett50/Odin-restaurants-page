@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Jdoggett50/Odin-restaurants-page#readme",
   "devDependencies": {
+    "url-loader": "^4.1.1",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4"
   }
