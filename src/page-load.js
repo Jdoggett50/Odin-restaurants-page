@@ -1,5 +1,5 @@
 export default loadDom
-import IslandTheme from './photos/island-theme.jpg'
+import IslandTheme from './photos/tropical-scene.jpg'
 
 function loadDom(){
     const p = document.createElement('p');
@@ -10,5 +10,4 @@ function loadDom(){
     img.src = IslandTheme;
     const domArr = [h1,p,img];
     return domArr 
-    // return domArr.forEach(el => content.appendChild(el));
 }

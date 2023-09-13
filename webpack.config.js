@@ -1,10 +1,13 @@
 const path = require('path');
 
 module.exports = {
-    entry: './src/index.js',
+    entry: {
+        main: './src/main.js',
+    },
     output: {
-        filename: 'main.js',
+        filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
+        clean: true,
     },
     module: {
         rules: [
@@ -12,6 +15,6 @@ module.exports = {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
                 type: 'asset/resource',
             },
-        ],
+        ]
     },
 };
