@@ -2,9 +2,14 @@
   "name": "odin-restaurants-page",
   "version": "1.0.0",
   "description": "",
+  "private": "true",
   "main": "index.js",
+  "build": "webpack",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch",
+    "start": "webpack serve --open",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
