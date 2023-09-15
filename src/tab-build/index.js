@@ -1,9 +1,11 @@
-import loadDom from "./page-load";
-import getMenuTab from './menu-style'
-import getDessertTab from './dessert-style'
-import getDrinkTab from './drink-style'
+import loadDom from "./page-load.js";
+import menuComponent from './menu.js';
+import dessertComponent from './dessert.js';
+import drinkComponent from './drink.js';
+import homeComponent from "./home.js";
+export {content};
 
-//this file is responsible for the tabbing behavior. The other files are resoinsible for creating showing the tabs.
+//this file is responsible for the tabbing behavior. The other files are responsible for creating and showing the tabs.
 //there needs to be a default 
 
 //there needs to be a templating function that says "I'm appending this to the dom" 
@@ -27,7 +29,6 @@ menuTab.textContent = "menu";
 menuTab.id = "menu-tab";
 content.append(menuTab);
 
-
-menuTab.addEventListener('click',getMenuTab);
-dessertTab.addEventListener('click', getDessertTab);
-drinkTab.addEventListener('click', getDrinkTab);
+menuTab.addEventListener('click', homeComponent);
+dessertTab.addEventListener('click', dessertComponent);
+drinkTab.addEventListener('click', drinkComponent);

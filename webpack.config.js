@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
     mode: 'development',
     entry: {
-        main: './src/main.js',
+        main: './src/tab-build/index.js',
     },
     output: {
         filename: '[name].bundle.js',
@@ -13,11 +13,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.(png|svg|jpg|jpeg|gif)$/i,
-                type: 'asset/resource',
-            },
-            {
-                test: /\css$/i,
+                test: /\.css$/i,
                 use: ['style-loader', 'css-loader'],
             },
         ],
