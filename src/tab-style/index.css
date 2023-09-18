@@ -1,12 +1,17 @@
+/* this defines the general styling of things to try and 
+adhere to DRY principles, this has no association with index.js*/
+
 body, * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-#content{
+#content {
     display: grid;
-    border: 1px solid black;
+    grid-template-rows: 1fr 5fr 1fr;
+    grid-template-columns: 1fr 5fr 1fr;
     width: 100vw;
     height: 100vh;
 }
+
