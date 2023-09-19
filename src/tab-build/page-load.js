@@ -13,10 +13,28 @@ function pageLoad(el){
     const header = document.createElement('header');
     const h1 = document.createElement('h1');
     const div = document.createElement('div');
-    h1.textContent = "Tropical Paradise";
+    const menuTab = document.createElement('div');
+    const drinkTab = document.createElement('div');
+    const dessertTab = document.createElement('div');
+
     div.classList.add('container');
+    
+    h1.textContent = "Tropical Paradise";
+    menuTab.classList.add('menu-tab');
+    menuTab.textContent = "Menu";
+    drinkTab.classList.add('drink-tab');
+    drinkTab.textContent = "Drinks";
+    dessertTab.classList.add('dessert-tab')
+    dessertTab.textContent = "Desserts";
+
+
+
+    const headerArr = [h1,menuTab,drinkTab,dessertTab];
+    headerArr.forEach(i => {
+        header.appendChild(i);
+    })
+
     const elArray = [header, div];
-    header.appendChild(h1);
     // el.appendChild(header);
     // el.appendChild(div);
     return elArray.forEach(i => {
@@ -24,6 +42,6 @@ function pageLoad(el){
     })
 }
 
-function loadElements() {
-
+function generateHeader(){
+    
 }
