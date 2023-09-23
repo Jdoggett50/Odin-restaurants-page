@@ -20,21 +20,26 @@ function pageLoad(el){
     const scrollingContainer = document.createElement('div');
     const backgroundContainer = document.createElement('div');
     
+    scrollingContainer.classList.add('scrolling-container');
+    backgroundContainer.classList.add('background-container')
+
     h1.textContent = "Tropical Paradise";
     
     menuTab.textContent = "Menu";
+    menuTab.classList.add('selection');
 
     drinkTab.textContent = "Drinks";
+    drinkTab.classList.add('selection');
 
     dessertTab.textContent = "Desserts";
-
+    dessertTab.classList.add('selection');
 
     const headerArr = [h1,menuTab,drinkTab,dessertTab];
     headerArr.forEach(i => {
         header.appendChild(i);
     })
 
-    const contentArr = [header, scrollingContainer, backgroundContainer];
+    const contentArr = [header,scrollingContainer, backgroundContainer];
 
     return contentArr.forEach(i => {
         el.appendChild(i);
