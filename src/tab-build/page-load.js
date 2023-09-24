@@ -15,31 +15,37 @@ function pageLoad(el){
     const menuTab = document.createElement('div');
     const drinkTab = document.createElement('div');
     const dessertTab = document.createElement('div');
-
-    //image container and it's akin scrolling container
-    const scrollingContainer = document.createElement('div');
-    const backgroundContainer = document.createElement('div');
     
+    //scrolling content container
+    const scrollingContainer = document.createElement('div');
     scrollingContainer.classList.add('scrolling-container');
-    backgroundContainer.classList.add('background-container')
+
+    //image container
+    const backgroundContainer = document.createElement('div');
+    backgroundContainer.classList.add('background-container');
+
+    //scrolling container content
+    const scrollingContent = document.createElement('div');
+    scrollingContent.classList.add('scrolling-content');
+    
 
     h1.textContent = "Tropical Paradise";
     
     menuTab.textContent = "Menu";
-    menuTab.classList.add('selection');
+    menuTab.classList.add('header-selection');
 
     drinkTab.textContent = "Drinks";
-    drinkTab.classList.add('selection');
+    drinkTab.classList.add('header-selection');
 
     dessertTab.textContent = "Desserts";
-    dessertTab.classList.add('selection');
+    dessertTab.classList.add('header-selection');
 
     const headerArr = [h1,menuTab,drinkTab,dessertTab];
     headerArr.forEach(i => {
         header.appendChild(i);
     })
 
-    const contentArr = [header,scrollingContainer, backgroundContainer];
+    const contentArr = [header,backgroundContainer,scrollingContainer];
 
     return contentArr.forEach(i => {
         el.appendChild(i);
