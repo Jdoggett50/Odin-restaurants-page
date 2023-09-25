@@ -1,5 +1,6 @@
 export default pageLoad;
 export {content}; 
+//write the contact component. For now it logs to console
 //page specific styling
 import pageStyle from '../tab-style/page-load.css';
 //DRY styling
@@ -10,25 +11,32 @@ const content = document.querySelector('#content');
 //this will be the layout for the entire site. 
 function pageLoad(el){
     //header and its contents
+    const drinkTab = document.createElement('div');
+    const dessertTab = document.createElement('div');
     const header = document.createElement('header');
     const h1 = document.createElement('h1');
     const menuTab = document.createElement('div');
-    const drinkTab = document.createElement('div');
-    const dessertTab = document.createElement('div');
     
-    //scrolling content container
-    const scrollingContainer = document.createElement('div');
-    scrollingContainer.classList.add('scrolling-container');
+    //page-load content
+    const homeInfoContainer = document.createElement('div');
+    const homeInfoH2 = document.createElement('h2');
+    const contactLinkAnchor = document.createElement('a');
+    contactLinkAnchor.textContent = "Contact Us";
+    contactLinkAnchor.title = "Contact";
+    contactLinkAnchor.classList.add('contact-link');
+    contactLinkAnchor.href = "";
 
     //image container
     const backgroundContainer = document.createElement('div');
     backgroundContainer.classList.add('background-container');
-
-    //scrolling container content
-    const scrollingContent = document.createElement('div');
-    scrollingContent.classList.add('scrolling-content');
     
-
+    //scrolling content container
+    const scrollingContainer = document.createElement('div');
+    scrollingContainer.classList.add('scrolling-container');
+    
+    //homeInfo contains the restaurant description
+    homeInfoH2.textContent = `Welcome to our online store! We accept sudo pay and bash bucks, this currency, that currency, tweedlebucks and casheroos! We cater as well!`
+    homeInfoH2.append(contactLinkAnchor);
     h1.textContent = "Tropical Paradise";
     
     menuTab.textContent = "Menu";
@@ -47,9 +55,9 @@ function pageLoad(el){
 
     const contentArr = [header,backgroundContainer,scrollingContainer];
 
+    scrollingContainer.appendChild(homeInfoContainer);
+    homeInfoContainer.appendChild(homeInfoH2);
     return contentArr.forEach(i => {
         el.appendChild(i);
     })
 }
-
-// "Welcome to our online store! We take this currency, that currency, tweedlebucks and casheroos! Please Call"
