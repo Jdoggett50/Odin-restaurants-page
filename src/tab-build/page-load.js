@@ -1,10 +1,4 @@
-export default pageLoad;
-export {content}; 
-//write the contact component. For now it logs to console
-//page specific styling
-import pageStyle from '../tab-style/page-load.css';
-//DRY styling
-import indexStyles from '../tab-style/index.css';
+import '../tab-style/page-load.css';
 
 const content = document.querySelector('#content');
 
@@ -35,19 +29,22 @@ function pageLoad(el){
     scrollingContainer.classList.add('scrolling-container');
     
     //homeInfo contains the restaurant description
-    homeInfoH2.textContent = `Welcome to our online store! We accept sudo pay and bash bucks, this currency, that currency, tweedlebucks and casheroos! We cater as well!`
+    homeInfoH2.textContent = `Welcome to our online shop! We accept sudo pay and bash bucks, this currency, that currency, tweedlebucks and casheroos! We cater as well!`
     homeInfoH2.append(contactLinkAnchor);
     homeInfoContainer.classList.add('home-info-container')
     h1.textContent = "Tropical Paradise";
     
     menuTab.textContent = "Menu";
     menuTab.classList.add('header-selection');
+    menuTab.classList.add('menu-tab');
 
     drinkTab.textContent = "Drinks";
     drinkTab.classList.add('header-selection');
+    drinkTab.classList.add('drinks-tab');
 
     dessertTab.textContent = "Desserts";
     dessertTab.classList.add('header-selection');
+    dessertTab.classList.add('dessert-tab');
 
     const headerArr = [h1,menuTab,drinkTab,dessertTab];
     headerArr.forEach(i => {
@@ -63,3 +60,6 @@ function pageLoad(el){
         el.appendChild(i);
     })
 }
+
+export default pageLoad;
+export {content};

@@ -1,7 +1,19 @@
-export default menuComponent;
-import menu from '../tab-style/menu.css';
+import '../tab-style/menu.css';
+// import '../tab-style/page-load.css';
+import {content} from './page-load';
 
-function menuComponent (){
-    // const div = document.createElement('div');
-    console.log('I\'m the menu tab function button');
+function menuComponent(){
+    const scrollingContainer = document.querySelector('.scrolling-container');
+    const homeInfoContainer = document.querySelector('.home-info-container');
+    clearContent(scrollingContainer,homeInfoContainer)
 }
+
+function clearContent(parent,child){
+    return parent.removeChild(child);
+}
+
+function createScrollingContent(){
+    
+}
+
+export default menuComponent;
