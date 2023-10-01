@@ -31,7 +31,7 @@ function pageLoad(el){
     //homeInfo contains the restaurant description
     homeInfoH2.textContent = `Welcome to our online shop! We accept sudo pay and bash bucks, this currency, that currency, tweedlebucks and casheroos! We cater as well!`
     homeInfoH2.append(contactLinkAnchor);
-    homeInfoContainer.classList.add('home-info-container')
+    homeInfoContainer.classList.add('home-info-container');
     h1.textContent = "Tropical Paradise";
     
     menuTab.textContent = "Menu";
