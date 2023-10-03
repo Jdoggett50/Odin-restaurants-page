@@ -58,13 +58,11 @@ h2 {
 
 .scrolling-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
     justify-self: center;
     align-self: center;
     grid-row: 2 / 3;
     grid-column: 2 / 3;
     z-index: 2;
-    /* height: 2000px; */
 }
 
 .background-container {
