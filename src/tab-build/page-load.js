@@ -14,6 +14,7 @@ function pageLoad(el){
     //page-load content
     const homeInfoContainer = document.createElement('div');
     const homeInfoH2 = document.createElement('h2');
+    homeInfoH2.classList.add('home-info-h2');
     const contactLinkAnchor = document.createElement('a');
     contactLinkAnchor.textContent = "Contact Us";
     contactLinkAnchor.title = "Contact";
