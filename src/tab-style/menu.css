@@ -4,7 +4,7 @@
     grid-template-areas: "app app app"
                          "special special special"
                          "sides sides sides";
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 20rem);
     grid-gap: 5rem;
     margin-top: 5rem;
 }
