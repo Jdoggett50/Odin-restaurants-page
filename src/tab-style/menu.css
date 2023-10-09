@@ -1,21 +1,24 @@
 .menu-container {
     display: grid;
+    grid-row: 1 / 4;
     grid-template-areas: "app app app"
                          "special special special"
                          "sides sides sides";
-    grid-template-columns: repeat(3,minmax(250px,1fr));
     grid-template-rows: repeat(3, 1fr);
     grid-gap: 5rem;
-    grid-row: 1 / 2;
-    /* margin-top: 5rem; */
+    margin-top: 5rem;
 }
 
 .app-container {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: repeat(3, minmax(150px, 1fr));
     grid-area: app;
+    border: 1px solid black;
 }
 
 .app-h2 {
-    
+
 }
 
 .app-menu-items {
@@ -23,7 +26,11 @@
 }
 
 .specials-container {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: repeat(3, minmax(150px, 1fr));
     grid-area: special;
+    border: 1px solid black;
 }
 
 .special-menu-items {
@@ -31,7 +38,11 @@
 }
 
 .sides-container {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: repeat(3, minmax(150px, 1fr));
     grid-area: sides;
+    border: 1px solid black;
 }
 
 .side-menu-items {
@@ -41,6 +52,6 @@
 .menu-items {
     height: 10rem;
     background: radial-gradient(#FEC0ABDD,#1A0735DD);
-    border-radius: 10px;
+    /* border-radius: 10px; */
 }
 
