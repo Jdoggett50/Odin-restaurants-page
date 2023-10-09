@@ -10,9 +10,6 @@ function menuComponent() {
     menuContainer.classList.add('menu-container');
     scrollingContainer.appendChild(menuContainer);
     generateMenuItems();
-    appetizerText();
-    specialsText();
-    sidesText();
 }
 
 // generates internal structure of the menu
@@ -31,33 +28,39 @@ function generateMenuItems() {
 
     //specials section
     appendGeneratedH2(specialsContainer, 1, 'specials-h2');
-    appendGeneratedDivs(specialsContainer, 3, 'special-menu-items')
+    appendGeneratedDivs(specialsContainer, 3, 'special-menu-items');
 
     //sides section
     appendGeneratedH2(sidesContainer, 1, 'sides-h2');
-    appendGeneratedDivs(sidesContainer, 3, 'side-menu-items')
+    appendGeneratedDivs(sidesContainer, 3, 'side-menu-items');
     
     //append children to menuContainer
     const menuContainer = document.querySelector('.menu-container');
     menuContainer.appendChild(appContainer);
     menuContainer.appendChild(specialsContainer);
     menuContainer.appendChild(sidesContainer);
+
+    //items within the 
+    setAppetizerH2();
+    setSpecialH2();
+    setSidesH2();
 }
 
-function appetizerText(){
+function setAppetizerH2(){
     const appH2 = document.querySelector('.app-h2');
     appH2.textContent = 'Appetizers';
 }
 
-function specialsText(){
+function setSpecialH2(){
     const specialsH2 = document.querySelector('.specials-h2');
     specialsH2.textContent = 'Specials';
 }
 
-function sidesText(){
+function setSidesH2(){
     const sidesH2 = document.querySelector('.sides-h2');
     sidesH2.textContent = 'Sides';
 }
+
 
 export function appendGeneratedH2(parent, numOfH2s, className){
     const h2 = document.createElement('h2');
