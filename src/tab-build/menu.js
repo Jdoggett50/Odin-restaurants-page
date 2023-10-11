@@ -40,10 +40,13 @@ function generateMenuItems() {
     menuContainer.appendChild(specialsContainer);
     menuContainer.appendChild(sidesContainer);
 
-    //items within the 
+    //h2s inside of menu items
     setAppetizerH2();
     setSpecialH2();
     setSidesH2();
+    setAppsContent();
+    setSpecialsContent();
+    setSidesContent();
 }
 
 function setAppetizerH2(){
@@ -61,6 +64,20 @@ function setSidesH2(){
     sidesH2.textContent = 'Sides';
 }
 
+function setAppsContent() {
+    const appMenuItems = document.querySelectorAll('.app-menu-items');
+    appMenuItems.forEach(el => appendGeneratedDivs(el, 2, 'app-content'))
+}
+
+function setSpecialsContent() {
+    const specialsMenuItems = document.querySelectorAll('.special-menu-items');
+    specialsMenuItems.forEach(el => appendGeneratedDivs(el, 2, 'specials-content'))
+}
+
+function setSidesContent() {
+    const sideMenuItems = document.querySelectorAll('.side-menu-items');
+    sideMenuItems.forEach(el => appendGeneratedDivs(el, 2, 'sides-content'))
+}
 
 export function appendGeneratedH2(parent, numOfH2s, className){
     const h2 = document.createElement('h2');
