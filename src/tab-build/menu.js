@@ -44,9 +44,9 @@ function generateMenuItems() {
     setAppetizerH2();
     setSpecialH2();
     setSidesH2();
-    setAppsContent();
-    setSpecialsContent();
-    setSidesContent();
+    setAppsContentContainer();
+    setSpecialsContentContainer();
+    setSidesContentContainer();
 }
 
 function setAppetizerH2(){
@@ -64,19 +64,67 @@ function setSidesH2(){
     sidesH2.textContent = 'Sides';
 }
 
-function setAppsContent() {
+function setAppsContentContainer() {
     const appMenuItems = document.querySelectorAll('.app-menu-items');
-    appMenuItems.forEach(el => appendGeneratedDivs(el, 2, 'app-content'))
+    appMenuItems.forEach(el => appendGeneratedDivs(el, 2, 'app-content'));
+    giveDiffClasses('app-content');
+    setAppTextBox1();
+    setAppTextBox2();
+    setAppTextBox3();
 }
 
-function setSpecialsContent() {
+function setSpecialsContentContainer() {
     const specialsMenuItems = document.querySelectorAll('.special-menu-items');
-    specialsMenuItems.forEach(el => appendGeneratedDivs(el, 2, 'specials-content'))
+    specialsMenuItems.forEach(el => appendGeneratedDivs(el, 2, 'specials-content'));
+    giveDiffClasses('specials-content');
+    // setSpecialsTextBox1();
+    // setSpecialsTextBox2();
+    // setSpecialsTextBox3();
 }
 
-function setSidesContent() {
+function setSidesContentContainer() {
     const sideMenuItems = document.querySelectorAll('.side-menu-items');
-    sideMenuItems.forEach(el => appendGeneratedDivs(el, 2, 'sides-content'))
+    sideMenuItems.forEach(el => appendGeneratedDivs(el, 2, 'sides-content'));
+    giveDiffClasses('sides-content');
+}
+
+function setAppTextBox1() {
+    const br = document.createElement('br');
+    const appContent0 = document.querySelector('.app-content-0');
+    const appContent1 = document.querySelector('.app-content-1');
+    const h3 = document.createElement('h3');
+    const p = document. createElement('p');
+    appContent0.appendChild(h3).textContent = 'Lorem Ipsum \r\n Delight';
+    appContent1.appendChild(p).textContent = "Fusce ac ligula vel quam blandit efficitur. Lorem ipsum dip into our special blend of crispy wontons filled with lorem ipsum.";
+}
+
+function setAppTextBox2() {
+    const appContent0 = document.querySelector('.app-content-2');
+    const appContent1 = document.querySelector('.app-content-3');
+    const h3 = document.createElement('h3');
+    const p = document. createElement('p');
+    appContent0.appendChild(h3).textContent = "Quisque Vestibulum \r\n Tasting Platter";
+    appContent1.appendChild(p).textContent = "Nullam aliquet eros ac metus cursus, vel condimentum justo tincidunt. Lorem ipsum crunch on our delectable assortment of lorem ipsum-infused crispy bites.";
+}
+
+function setAppTextBox3() {
+    const appContent0 = document.querySelector('.app-content-4');
+    const appContent1 = document.querySelector('.app-content-5');
+    const h3 = document.createElement('h3');
+    const p = document. createElement('p');
+    appContent0.appendChild(h3).textContent = "Quam Blandit \r\n Quinoa Bites";
+    appContent1.appendChild(p).textContent = "Crispy quinoa and cheese bites, served with a tangy Lorem Ipsum aioli. Duis non tortor a lectus consectetur fringilla. Sed lobortis arcu ut vestibulum elementum.";
+}
+
+function giveDiffClasses(elements) {
+    const selection = document.querySelectorAll(`.${elements}`);
+    for(let i = 0; i < selection.length; i++){
+        selection[i].classList.add(`${elements}-${i}`);
+    }
+}
+
+function setSpecialText() {
+
 }
 
 export function appendGeneratedH2(parent, numOfH2s, className){
