@@ -27,8 +27,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
-    background: radial-gradient(#FEC0ABAA , #1A0735EE);
+    gap: 1rem;
+    background: radial-gradient( #F4BFBBDD 10%, #9F8AC2FF);
     border-radius: 5%;
     border: 1px solid black;
 }
@@ -47,7 +47,11 @@
 }
 
 .special-menu-items {
-    background: radial-gradient(#FEC0ABAA , #1A0735EE);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    background: radial-gradient( #F4BFBBDD 10%, #9F8AC2FF);
     border-radius: 5%;
     border: 1px solid black;
 }
@@ -66,13 +70,23 @@
 }
 
 .side-menu-items {
-    grid-template-columns: repeat(3, minmax(150px, 1fr));
-    background: radial-gradient(#FEC0ABAA , #1A0735EE);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: radial-gradient( #F4BFBBDD 10%, #9F8AC2FF);
+    gap: 1rem;
     border-radius: 5%;
-    grid-gap: 3rem;
     border: 1px solid black;
 }
 
 .app-content {
+    white-space: pre-line;
+}
+
+.specials-content {
+    white-space: pre-line;
+}
+
+.sides-content {
     white-space: pre-line;
 }
