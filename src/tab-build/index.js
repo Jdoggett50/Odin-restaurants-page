@@ -9,4 +9,9 @@ pageLoad(content);
 const menuButton = document.querySelector('.menu-tab');
 menuButton.addEventListener('click',() => {
     menuComponent()
-})
+});
+
+const drinkButton = document.querySelector('.drinks-tab');
+drinkButton.addEventListener('click', () => {
+    drinkComponent()
+});
