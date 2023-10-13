@@ -62,5 +62,15 @@ function pageLoad(el){
     })
 }
 
+export function tabContentContainer(classContainer) {
+    //remove the classList existing
+    const scrollingContainer = document.querySelector('.scrolling-container');
+    scrollingContainer.textContent = '';
+
+    const div = document.createElement('div');
+    div.classList.add(classContainer);
+    scrollingContainer.appendChild(div);
+}
+
 export default pageLoad;
 export {content};

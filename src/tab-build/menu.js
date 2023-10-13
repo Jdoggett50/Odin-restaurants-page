@@ -1,6 +1,5 @@
 import '../tab-style/menu.css'; 
-
-
+import { tabContentContainer } from './page-load';
 
 function setAppetizerH2(){
     const appH2 = document.querySelector('.app-h2');
@@ -133,15 +132,6 @@ function giveDiffClasses(elements) {
     }
 }
 
-export function tabContentContainer(classContainer) {
-    const scrollingContainer = document.querySelector('.scrolling-container');
-    scrollingContainer.textContent = '';
-
-    const div = document.createElement('div');
-    div.classList.add(classContainer);
-    scrollingContainer.appendChild(div);
-}
-
 export function appendGeneratedH2(parent, numOfH2s, className){
     const h2 = document.createElement('h2');
     if(className){
@@ -161,8 +151,8 @@ export function appendGeneratedDivs(parent,numOfDivs,className){
 }
 
 // generates internal structure of the menu
-export  default function menuComponent() {
-    tabContentContainer('menu-container')
+export function menuComponent() {
+    tabContentContainer('menu-container');
     //containers and container classes
     const appContainer = document.createElement('div');
     appContainer.classList.add('app-container');

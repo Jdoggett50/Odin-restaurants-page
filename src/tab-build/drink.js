@@ -1,8 +1,9 @@
-export default drinkComponent;
-import drink from '../tab-style/drink.css';
+import { tabContentContainer } from './page-load';
+import '../tab-style/drink.css'
 
-//okay, now make these
 
-function drinkComponent (){
-    // const
+export function drinkComponent() {
+    tabContentContainer('drink-container');
+    // const scrollingContainer = document.querySelector('.scrolling-container');
+    // scrollingContainer.textContent = ''
 }
