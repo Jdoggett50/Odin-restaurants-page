@@ -1,3 +1,17 @@
 .drink-container {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
     border: 1px solid black;
+}
+
+.beer-ul {
+    grid-row: 1 / 2;
+}
+
+.wine-ul {
+    grid-row: 2 / 3;
+}
+
+.cocktail-ul {
+    grid-row: 3 / 4;
 }

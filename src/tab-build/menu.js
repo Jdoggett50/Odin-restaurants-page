@@ -1,5 +1,5 @@
 import '../tab-style/menu.css'; 
-import { tabContentContainer } from './page-load';
+import { tabContentContainer, giveDiffClasses} from './page-load';
 
 function setAppetizerH2(){
     const appH2 = document.querySelector('.app-h2');
@@ -123,13 +123,6 @@ function setSidesTextBox3() {
     const p = document. createElement('p');
     sidesContent4.appendChild(h3).textContent = 'Lorem Ipsum Parmesan \r\n Truffle Fries \r\n $7';
     sidesContent5.appendChild(p).textContent = 'Crispy golden fries tossed with Parmesan cheese and a drizzle of Lorem Ipsum-infused truffle oil. Sed vitae neque a arcu eleifend ullamcorper. Nullam sagittis ipsum ut semper bibendum.';
-}
-
-function giveDiffClasses(elements) {
-    const selection = document.querySelectorAll(`.${elements}`);
-    for(let i = 0; i < selection.length; i++){
-        selection[i].classList.add(`${elements}-${i}`);
-    }
 }
 
 export function appendGeneratedH2(parent, numOfH2s, className){

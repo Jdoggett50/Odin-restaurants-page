@@ -72,5 +72,12 @@ export function tabContentContainer(classContainer) {
     scrollingContainer.appendChild(div);
 }
 
+export function giveDiffClasses(elements) {
+    const selection = document.querySelectorAll(`.${elements}`);
+    for(let i = 0; i < selection.length; i++){
+        selection[i].classList.add(`${elements}-${i}`);
+    }
+}
+
 export default pageLoad;
 export {content};
