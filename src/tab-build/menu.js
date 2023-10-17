@@ -1,5 +1,5 @@
 import '../tab-style/menu.css'; 
-import { tabContentContainer, giveDiffClasses} from './page-load';
+import { tabContentContainer, giveDiffClasses, appendGeneratedEls} from './page-load';
 
 function setAppetizerH2(){
     const appH2 = document.querySelector('.app-h2');
@@ -18,7 +18,7 @@ function setSidesH2(){
 
 function setAppsContentContainer() {
     const appMenuItems = document.querySelectorAll('.app-menu-items');
-    appMenuItems.forEach(el => appendGeneratedDivs(el, 2, 'app-content'));
+    appMenuItems.forEach(el => appendGeneratedEls(el, 'div', 2, 'app-content'));
     giveDiffClasses('app-content');
     setAppTextBox1();
     setAppTextBox2();
@@ -27,7 +27,7 @@ function setAppsContentContainer() {
 
 function setSpecialsContentContainer() {
     const specialsMenuItems = document.querySelectorAll('.special-menu-items');
-    specialsMenuItems.forEach(el => appendGeneratedDivs(el, 2, 'specials-content'));
+    specialsMenuItems.forEach(el => appendGeneratedEls(el, 'div', 2, 'specials-content'));
     giveDiffClasses('specials-content');
     setSpecialsTextBox1();
     setSpecialsTextBox2();
@@ -36,7 +36,7 @@ function setSpecialsContentContainer() {
 
 function setSidesContentContainer() {
     const sideMenuItems = document.querySelectorAll('.side-menu-items');
-    sideMenuItems.forEach(el => appendGeneratedDivs(el, 2, 'sides-content'));
+    sideMenuItems.forEach(el => appendGeneratedEls(el, 'div', 2, 'sides-content'));
     giveDiffClasses('sides-content');
     setSidesTextBox1();
     setSidesTextBox2();
@@ -135,14 +135,6 @@ export function appendGeneratedH2(parent, numOfH2s, className){
     }
 }
 
-export function appendGeneratedDivs(parent,numOfDivs,className){
-    const div = document.createElement('div');
-    div.classList.add(className);
-    for(let i = 0; i < numOfDivs; i++){
-        parent.appendChild(div.cloneNode(true));
-    };
-}
-
 // generates internal structure of the menu
 export function menuComponent() {
     tabContentContainer('menu-container');
@@ -156,15 +148,15 @@ export function menuComponent() {
     
     //appetizer section
     appendGeneratedH2(appContainer, 1, 'app-h2');
-    appendGeneratedDivs(appContainer, 3, 'app-menu-items');
+    appendGeneratedEls(appContainer, 'div', 3, 'app-menu-items');
 
     //specials section
     appendGeneratedH2(specialsContainer, 1, 'specials-h2');
-    appendGeneratedDivs(specialsContainer, 3, 'special-menu-items');
+    appendGeneratedEls(specialsContainer, 'div', 3, 'special-menu-items');
 
     //sides section
     appendGeneratedH2(sidesContainer, 1, 'sides-h2');
-    appendGeneratedDivs(sidesContainer, 3, 'side-menu-items');
+    appendGeneratedEls(sidesContainer, 'div', 3, 'side-menu-items');
     
     //append children to menuContainer
     const menuContainer = document.querySelector('.menu-container');

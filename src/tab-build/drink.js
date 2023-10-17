@@ -1,29 +1,37 @@
-import { tabContentContainer,giveDiffClasses } from './page-load';
+import { tabContentContainer,appendGeneratedEls} from './page-load';
 import '../tab-style/drink.css';
 
 const wineArr = ['hello','world','how','you doing'];
-const beerArr = [];
-const cocktailArr = [];
+const beerArr = ['john', 'you', 'are', 'a dumbass'];
+const cocktailArr = ['john', 'you', 'are', 'a dumbass'];
 
 export function drinkComponent() {
     tabContentContainer('drink-container');
     const drinkContainer = document.querySelector('.drink-container');
-    makeDrinkList(drinkContainer,'test-wine',wineArr);
+
+    makeDrinkUl(drinkContainer,'beer-ul');
+    makeDrinkUl(drinkContainer,'wine-ul');
+    makeDrinkUl(drinkContainer,'cocktail-ul');
+
+    const beer = document.querySelector('.beer-ul');
+    const wine = document.querySelector('.wine-ul');
+    const cocktail = document.querySelector('.cocktail-ul');
+
+    appendGeneratedEls(beer, 'li', beerArr.length, 'beer-li');
+    appendGeneratedEls(wine, 'li', wineArr.length, 'wine-li');
+    appendGeneratedEls(cocktail, 'li', cocktailArr.length, 'cocktail-li');
 }
 
 //create am unordered list and append it to the container.
 
-function makeDrinkList(parent,className,...drinks) {
-    const drinkArr = [...drinks];
+function makeDrinkUl(parent,className) {
     const ul = document.createElement('ul');
     ul.classList.add(className);
     parent.appendChild(ul);
-    drinkArr.forEach(el => {
-        //creating only one li. I need multiple li elements to be created.
-        const li = document.createElement('li').cloneNode(true);
-        li.textContent = el;
-        ul.appendChild(li)
-    });
+}
+
+function giveLiContent () {
+
 }
 
 //similarities are that they create a UL, they all have an array to plug in

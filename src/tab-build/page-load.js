@@ -62,6 +62,16 @@ function pageLoad(el){
     })
 }
 
+//append generated elements
+
+export function appendGeneratedEls(parent,elType,numOfEls,className){
+    const element = document.createElement(elType);
+    element.classList.add(className);
+    for(let i = 0; i < numOfEls; i++){
+        parent.appendChild(element.cloneNode(true));
+    };
+}
+
 export function tabContentContainer(classContainer) {
     //remove the classList existing
     const scrollingContainer = document.querySelector('.scrolling-container');
