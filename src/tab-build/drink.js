@@ -9,6 +9,9 @@ export function drinkComponent() {
     tabContentContainer('drink-container');
     const drinkContainer = document.querySelector('.drink-container');
 
+    //h2 atop each container inside of drink container
+    //I need three containers inside of drinkContainer
+
     makeDrinkUl(drinkContainer,'beer-ul');
     makeDrinkUl(drinkContainer,'wine-ul');
     makeDrinkUl(drinkContainer,'cocktail-ul');
@@ -20,6 +23,10 @@ export function drinkComponent() {
     appendGeneratedEls(beer, 'li', beerArr.length, 'beer-li');
     appendGeneratedEls(wine, 'li', wineArr.length, 'wine-li');
     appendGeneratedEls(cocktail, 'li', cocktailArr.length, 'cocktail-li');
+    giveLiContent('.beer-li', beerArr);
+    giveLiContent('.wine-li', wineArr);
+    giveLiContent('.cocktail-li', cocktailArr);
+
 }
 
 //create am unordered list and append it to the container.
@@ -30,8 +37,11 @@ function makeDrinkUl(parent,className) {
     parent.appendChild(ul);
 }
 
-function giveLiContent () {
-
+function giveLiContent (targetEls,itemArr) {
+    const selection = document.querySelectorAll(targetEls);
+    for(let i = 0; i < selection.length; i++){
+        selection[i].textContent = itemArr[i];
+    }
 }
 
 //similarities are that they create a UL, they all have an array to plug in
