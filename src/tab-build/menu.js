@@ -1,20 +1,5 @@
 import '../tab-style/menu.css'; 
-import { tabContentContainer, giveDiffClasses, appendGeneratedEls} from './page-load';
-
-function setAppetizerH2(){
-    const appH2 = document.querySelector('.app-h2');
-    appH2.textContent = 'Appetizers';
-}
-
-function setSpecialH2(){
-    const specialsH2 = document.querySelector('.specials-h2');
-    specialsH2.textContent = 'Specials';
-}
-
-function setSidesH2(){
-    const sidesH2 = document.querySelector('.sides-h2');
-    sidesH2.textContent = 'Sides';
-}
+import { tabContentContainer, giveDiffClasses, appendGeneratedEls, appendGeneratedH2, setElementContent} from './page-load';
 
 function setAppsContentContainer() {
     const appMenuItems = document.querySelectorAll('.app-menu-items');
@@ -125,19 +110,9 @@ function setSidesTextBox3() {
     sidesContent5.appendChild(p).textContent = 'Crispy golden fries tossed with Parmesan cheese and a drizzle of Lorem Ipsum-infused truffle oil. Sed vitae neque a arcu eleifend ullamcorper. Nullam sagittis ipsum ut semper bibendum.';
 }
 
-export function appendGeneratedH2(parent, numOfH2s, className){
-    const h2 = document.createElement('h2');
-    if(className){
-        h2.classList.add(className);
-    }
-    for(let i = 0; i < numOfH2s; i++){
-        parent.appendChild(h2.cloneNode(true));
-    }
-}
-
 // generates internal structure of the menu
 export function menuComponent() {
-    tabContentContainer('menu-container');
+    tabContentContainer('.scrolling-container','menu-container');
     //containers and container classes
     const appContainer = document.createElement('div');
     appContainer.classList.add('app-container');
@@ -148,15 +123,15 @@ export function menuComponent() {
     
     //appetizer section
     appendGeneratedH2(appContainer, 1, 'app-h2');
-    appendGeneratedEls(appContainer, 'div', 3, 'app-menu-items');
+    appendRepeatingEls(appContainer, 'div', 3, 'app-menu-items');
 
     //specials section
     appendGeneratedH2(specialsContainer, 1, 'specials-h2');
-    appendGeneratedEls(specialsContainer, 'div', 3, 'special-menu-items');
+    appendRepeatingEls(specialsContainer, 'div', 3, 'special-menu-items');
 
     //sides section
     appendGeneratedH2(sidesContainer, 1, 'sides-h2');
-    appendGeneratedEls(sidesContainer, 'div', 3, 'side-menu-items');
+    appendRepeatingEls(sidesContainer, 'div', 3, 'side-menu-items');
     
     //append children to menuContainer
     const menuContainer = document.querySelector('.menu-container');
@@ -165,9 +140,9 @@ export function menuComponent() {
     menuContainer.appendChild(sidesContainer);
 
     //h2s inside of menu items
-    setAppetizerH2();
-    setSpecialH2();
-    setSidesH2();
+    setElementContent('.app-h2','Appetizer');
+    setElementContent('.specials-h2','Specials');
+    setElementContent('.sides-h2','Sides');
     setAppsContentContainer();
     setSpecialsContentContainer();
     setSidesContentContainer();

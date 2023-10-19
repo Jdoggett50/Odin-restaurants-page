@@ -64,7 +64,12 @@ function pageLoad(el){
 
 //append generated elements
 
-export function appendGeneratedEls(parent,elType,numOfEls,className){
+export function setElementContent(selector, content) {
+    const element = document.querySelector(selector);
+    element.textContent = `${content}`;
+}
+
+export function appendRepeatingEls(parent,elType,numOfEls,className){
     const element = document.createElement(elType);
     element.classList.add(className);
     for(let i = 0; i < numOfEls; i++){
@@ -72,20 +77,31 @@ export function appendGeneratedEls(parent,elType,numOfEls,className){
     };
 }
 
-export function tabContentContainer(classContainer) {
+export function tabContentContainer(parent,classContainer) {
     //remove the classList existing
-    const scrollingContainer = document.querySelector('.scrolling-container');
-    scrollingContainer.textContent = '';
+    const parentContainer = document.querySelector(parent);
+    parentContainer.textContent = '';
 
     const div = document.createElement('div');
     div.classList.add(classContainer);
-    scrollingContainer.appendChild(div);
+    parentContainer.appendChild(div);
 }
 
 export function giveDiffClasses(elements) {
     const selection = document.querySelectorAll(`.${elements}`);
+    console.log(selection)
     for(let i = 0; i < selection.length; i++){
         selection[i].classList.add(`${elements}-${i}`);
+    }
+}
+
+export function appendGeneratedH2(parent, numOfH2s, className){
+    const h2 = document.createElement('h2');
+    if(className){
+        h2.classList.add(className);
+    }
+    for(let i = 0; i < numOfH2s; i++){
+        parent.appendChild(h2.cloneNode(true));
     }
 }
 
