@@ -89,7 +89,7 @@ export function tabContentContainer(parent,classContainer) {
 
 export function giveDiffClasses(elements) {
     const selection = document.querySelectorAll(`.${elements}`);
-    console.log(selection)
+    // console.log(selection)
     for(let i = 0; i < selection.length; i++){
         selection[i].classList.add(`${elements}-${i}`);
     }

@@ -1,9 +1,9 @@
 import '../tab-style/menu.css'; 
-import { tabContentContainer, giveDiffClasses, appendGeneratedEls, appendGeneratedH2, setElementContent} from './page-load';
+import { tabContentContainer, giveDiffClasses, appendRepeatingEls, appendGeneratedH2, setElementContent} from './page-load';
 
 function setAppsContentContainer() {
     const appMenuItems = document.querySelectorAll('.app-menu-items');
-    appMenuItems.forEach(el => appendGeneratedEls(el, 'div', 2, 'app-content'));
+    appMenuItems.forEach(el => appendRepeatingEls(el, 'div', 2, 'app-content'));
     giveDiffClasses('app-content');
     setAppTextBox1();
     setAppTextBox2();
@@ -12,7 +12,7 @@ function setAppsContentContainer() {
 
 function setSpecialsContentContainer() {
     const specialsMenuItems = document.querySelectorAll('.special-menu-items');
-    specialsMenuItems.forEach(el => appendGeneratedEls(el, 'div', 2, 'specials-content'));
+    specialsMenuItems.forEach(el => appendRepeatingEls(el, 'div', 2, 'specials-content'));
     giveDiffClasses('specials-content');
     setSpecialsTextBox1();
     setSpecialsTextBox2();
@@ -21,7 +21,7 @@ function setSpecialsContentContainer() {
 
 function setSidesContentContainer() {
     const sideMenuItems = document.querySelectorAll('.side-menu-items');
-    sideMenuItems.forEach(el => appendGeneratedEls(el, 'div', 2, 'sides-content'));
+    sideMenuItems.forEach(el => appendRepeatingEls(el, 'div', 2, 'sides-content'));
     giveDiffClasses('sides-content');
     setSidesTextBox1();
     setSidesTextBox2();

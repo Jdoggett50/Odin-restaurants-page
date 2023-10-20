@@ -4,6 +4,9 @@ import '../tab-style/drink.css';
 const wineArr = ['hello','world','how','you doing'];
 const beerArr = ['john', 'you', 'are', 'a dumbass'];
 const cocktailArr = ['john', 'you', 'are', 'a dumbass'];
+const winePriceArr = ['$4', '$5', '$10', '$12'];
+const beerPriceArr = ['$3', '$4', '$6', '$8'];
+const cocktailPriceArr = ['$10', '$12', '$11', '$15']
 
 export function drinkComponent() {
     tabContentContainer('.scrolling-container', 'drink-container');
@@ -17,23 +20,32 @@ export function drinkComponent() {
     makeUls('ul-containers-0', 'wine-ul');
     makeUls('ul-containers-1', 'beer-ul');
     makeUls('ul-containers-2', 'cocktail-ul');
-
-    //
-
+    makeUls('ul-containers-0', 'wine-price');
+    makeUls('ul-containers-1', 'beer-price');
+    makeUls('ul-containers-2', 'cocktail-price');
+    
     const wineUl = document.querySelector('.wine-ul');
     const beerUl = document.querySelector('.beer-ul');
     const cocktailUl = document.querySelector('.cocktail-ul');
+    const winePriceUl = document.querySelector('.wine-price');
+    const beerPriceUl = document.querySelector('.beer-price');
+    const cocktailPrice = document.querySelector('.cocktail-price');
 
     //content Ul and Li for the drink names
     appendRepeatingEls(wineUl, 'li', wineArr.length, 'wine-li');
     appendRepeatingEls(beerUl, 'li', beerArr.length, 'beer-li');
     appendRepeatingEls(cocktailUl, 'li', cocktailArr.length, 'cocktail-li');
+    appendRepeatingEls(winePriceUl, 'li', winePriceArr.length, 'wine-price-li');
+    appendRepeatingEls(beerPriceUl, 'li', beerPriceArr.length, 'beer-price-li');
+    appendRepeatingEls(cocktailPrice, 'li', cocktailPriceArr.length, 'cocktail-price-li');
 
     giveLiContent('.wine-li', wineArr);
     giveLiContent('.beer-li', beerArr);
     giveLiContent('.cocktail-li', cocktailArr);
+    giveLiContent('.wine-price-li', winePriceArr);
+    giveLiContent('.beer-price-li', beerPriceArr);
+    giveLiContent('.cocktail-price-li', cocktailPriceArr);
 
-    
 }
 
 //create am unordered list and append it to the container.
@@ -41,7 +53,6 @@ export function drinkComponent() {
 function makeUls(parent,className) {
     const parentEl = document.querySelector(`.${parent}`)
     const ul = document.createElement('ul');
-    console.log(parent)
     ul.classList.add(className);
     parentEl.appendChild(ul);
 }
