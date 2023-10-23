@@ -1,9 +1,9 @@
 import { tabContentContainer,appendRepeatingEls, appendGeneratedH2, giveDiffClasses, setElementContent} from './page-load';
 import '../tab-style/drink.css';
 
-const wineArr = ['hello','world','how','you doing'];
-const beerArr = ['john', 'you', 'are', 'a dumbass'];
-const cocktailArr = ['john', 'you', 'are', 'a dumbass'];
+const wineArr = ['Dolor Rose','Minim Mascato','Mollit Merlot','Culpa Chardonnay'];
+const beerArr = ['Sit Amet Ale', 'Lorem Lager', 'Ipsum Ipa', 'Sed Stout'];
+const cocktailArr = ['Mystic Lorem Elixir', 'Whimsical Ipsum Zest', 'Ipsum Breeze', 'Lorem Libation'];
 const winePriceArr = ['$4', '$5', '$10', '$12'];
 const beerPriceArr = ['$3', '$4', '$6', '$8'];
 const cocktailPriceArr = ['$10', '$12', '$11', '$15']

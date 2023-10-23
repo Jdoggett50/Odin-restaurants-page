@@ -6,7 +6,7 @@
                          "sides sides sides";
     grid-template-rows: repeat(3, 20rem);
     grid-gap: 3rem;
-    margin-top: 5rem;
+    margin-top: 1rem;
 }
 
 .app-container {

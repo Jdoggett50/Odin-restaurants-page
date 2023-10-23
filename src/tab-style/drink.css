@@ -1,6 +1,8 @@
 .drink-container {
     display: grid;
+    margin-top: 1rem;
     grid-template-columns: 1fr 3fr 1fr;
+    grid-gap: 3rem;
 }
 
 .ul-container h2 {
@@ -10,31 +12,37 @@
 
 .ul-container {
     display: grid;
-    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: auto 1fr;
 }
 
 .wine-ul {
+    /* justify-self: center; */
     grid-column: 1 / 2;
 }
 
 .wine-price {
+    justify-self: center;
     grid-column: 3 / 4;
 }
 
 .beer-ul {
+    /* justify-self: center; */
     grid-column: 1 / 2;
 }
 
 .beer-price {
+    justify-self: center;
     grid-column: 3 / 4;
 }
 
 .cocktail-ul {
+    /* justify-self: center; */
     grid-column: 1 / 2;
 }
 
 .cocktail-price {
+    justify-self: center;
     grid-column: 3 / 4;
 }
 
