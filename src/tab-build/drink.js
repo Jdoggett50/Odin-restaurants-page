@@ -1,4 +1,4 @@
-import { tabContentContainer,appendRepeatingEls, appendGeneratedH2, giveDiffClasses} from './page-load';
+import { tabContentContainer,appendRepeatingEls, appendGeneratedH2, giveDiffClasses, setElementContent} from './page-load';
 import '../tab-style/drink.css';
 
 const wineArr = ['hello','world','how','you doing'];
@@ -9,20 +9,38 @@ const beerPriceArr = ['$3', '$4', '$6', '$8'];
 const cocktailPriceArr = ['$10', '$12', '$11', '$15']
 
 export function drinkComponent() {
+    //create container to append to scrolling container
     tabContentContainer('.scrolling-container', 'drink-container');
-    const drinkContainer = document.querySelector('.drink-container');
-    //containers for each ul
-    appendRepeatingEls(drinkContainer, 'div', 3, 'ul-containers');
-    // appendGeneratedEls
-    
-    giveDiffClasses('ul-containers');
 
-    makeUls('ul-containers-0', 'wine-ul');
-    makeUls('ul-containers-1', 'beer-ul');
-    makeUls('ul-containers-2', 'cocktail-ul');
-    makeUls('ul-containers-0', 'wine-price');
-    makeUls('ul-containers-1', 'beer-price');
-    makeUls('ul-containers-2', 'cocktail-price');
+    //target drink container and append divs named ul-container
+    const drinkContainer = document.querySelector('.drink-container');
+    appendRepeatingEls(drinkContainer, 'div', 3, 'ul-container');
+    
+    //give each ul-container individual classes for targetting purposes
+    giveDiffClasses('ul-container');
+
+// -----------------------------------------------------------------
+    //target each container and give it an h2 with content
+    const ulContainer0 = document.querySelector('.ul-container-0');
+    const ulContainer1 = document.querySelector('.ul-container-1');
+    const ulContainer2 = document.querySelector('.ul-container-2');
+
+    appendGeneratedH2(ulContainer0, 1, 'wine-h2');
+    appendGeneratedH2(ulContainer1, 1, 'beer-h2');
+    appendGeneratedH2(ulContainer2, 1, 'cocktail-h2');
+
+
+    setElementContent('.wine-h2', 'Wine');
+    setElementContent('.beer-h2', 'Beer');
+    setElementContent('.cocktail-h2', 'Cocktails');
+//------------------------------------------------------------------
+    //create uls with li content
+    makeUls(ulContainer0, 'wine-ul');
+    makeUls(ulContainer1, 'beer-ul');
+    makeUls(ulContainer2, 'cocktail-ul');
+    makeUls(ulContainer0, 'wine-price');
+    makeUls(ulContainer1, 'beer-price');
+    makeUls(ulContainer2, 'cocktail-price');
     
     const wineUl = document.querySelector('.wine-ul');
     const beerUl = document.querySelector('.beer-ul');
@@ -31,6 +49,7 @@ export function drinkComponent() {
     const beerPriceUl = document.querySelector('.beer-price');
     const cocktailPrice = document.querySelector('.cocktail-price');
 
+    
     //content Ul and Li for the drink names
     appendRepeatingEls(wineUl, 'li', wineArr.length, 'wine-li');
     appendRepeatingEls(beerUl, 'li', beerArr.length, 'beer-li');
@@ -51,10 +70,9 @@ export function drinkComponent() {
 //create am unordered list and append it to the container.
 
 function makeUls(parent,className) {
-    const parentEl = document.querySelector(`.${parent}`)
     const ul = document.createElement('ul');
     ul.classList.add(className);
-    parentEl.appendChild(ul);
+    parent.appendChild(ul);
 }
 
 function giveLiContent (targetEls,itemArr) {
