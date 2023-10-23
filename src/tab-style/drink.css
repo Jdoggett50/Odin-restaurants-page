@@ -12,12 +12,15 @@
 
 .ul-container {
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto 1fr;
+    background: radial-gradient( #F4BFBBDD 10%, #9F8AC2FF);
+    border-radius: 5%;
+    border: 1px solid black;
 }
 
 .wine-ul {
-    /* justify-self: center; */
+    margin-left: 4px;
     grid-column: 1 / 2;
 }
 
@@ -27,7 +30,7 @@
 }
 
 .beer-ul {
-    /* justify-self: center; */
+    margin-left: 4px;
     grid-column: 1 / 2;
 }
 
@@ -37,7 +40,7 @@
 }
 
 .cocktail-ul {
-    /* justify-self: center; */
+    margin-left: 4px;
     grid-column: 1 / 2;
 }
 
