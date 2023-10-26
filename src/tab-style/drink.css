@@ -20,33 +20,39 @@
 }
 
 .wine-ul {
-    margin-left: 4px;
     grid-column: 1 / 2;
+    margin-left: 4px;
+    align-self: center;
 }
 
 .wine-price {
-    justify-self: center;
     grid-column: 3 / 4;
+    justify-self: center;
+    align-self: center;
 }
 
 .beer-ul {
-    margin-left: 4px;
     grid-column: 1 / 2;
+    margin-left: 4px;
+    align-self: center;
 }
 
 .beer-price {
-    justify-self: center;
     grid-column: 3 / 4;
+    justify-self: center;
+    align-self: center;
 }
 
 .cocktail-ul {
-    margin-left: 4px;
     grid-column: 1 / 2;
+    margin-left: 4px;
+    align-self: center;
 }
 
 .cocktail-price {
-    justify-self: center;
     grid-column: 3 / 4;
+    justify-self: center;
+    align-self: center;
 }
 
 .ul-container-0 {
